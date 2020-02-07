@@ -1,25 +1,4 @@
-trumpdata <- function(){
-  trump <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/data/master/hate-crimes/hate_crimes.csv", sep = ",")
-  save(trump, file = "C:/Users/elisa/Documents/GitHub/573e6b4b/ProjectTrial/Data/trump.rda")
-  load("~/GitHub/573e6b4b/ProjectTrial/Data/trump.rda")
-}
-trumpdata()
-
-#callthis as a function
-newtrumpdata <- function(){
-  trump$median_household_income <- as.numeric(trump$median_household_income)
-  trump$share_unemployed_seasonal <- as.numeric(trump$share_unemployed_seasonal)
-  trump$share_population_in_metro_areas <- as.numeric(trump$share_population_in_metro_areas)
-  trump$share_population_with_high_school_degree <- as.numeric(trump$share_population_with_high_school_degree)
-  trump$share_non_citizen <- as.numeric(trump$share_non_citizen)
-  trump$share_white_poverty <- as.numeric(trump$share_white_poverty)
-  trump$gini_index <- as.numeric(trump$gini_index)
-  trump$share_non_white <- as.numeric(trump$share_non_white)
-  trump$share_voters_voted_trump <- as.numeric(trump$share_voters_voted_trump)
-  trump$hate_crimes_per_100k_splc <- as.numeric(trump$hate_crimes_per_100k_splc)
-  trump$avg_hatecrimes_per_100k_fbi <- as.numeric(trump$avg_hatecrimes_per_100k_fbi)
-}
-newtrumpdata()
+usethis::use_data(trump, overwrite = TRUE)
 
 trumpanalysis <- function(){
   str(trump)
@@ -28,14 +7,28 @@ trumpanalysis <- function(){
 }
 trumpanalysis()
 
-whitepovertytrump <- function(){
-  require(tidyverse)
-  ggplot(trump, aes(x=share_white_poverty, y=share_voters_voted_trump)) + geom_point() + geom_jitter() + geom_smooth(method = 'lm')
-}
-whitepovertytrump()
+#analyze data
+trumpn <- trump[-1]
+pairs(trumpn)
+correlation <- cor(trumpn)
+print(correlation)
 
-trumpwhitepoverty <- function(){
-  require(tidyverse)
-  ggplot(trump, aes(x=share_voters_voted_trump, y=share_white_poverty)) + geom_point() + geom_jitter() + geom_smooth(method = 'lm')
+
+
+#multiple regression
+mregress_trump <- function(){
+  y <- trump$hate_crimes_per_100k_splc
+  x1 <- trump$median_household_income
+  x2 <- trump$share_unemployed_seasonal
+  x3 <- trump$share_population_in_metro_areas
+  x4 <- trump$share_population_with_high_school_degree
+  x5 <- trump$share_non_citizen
+  x6 <- trump$share_white_poverty
+  x7 <- trump$share_non_white
+  x8 <- trump$share_voters_voted_trump
+  m1 <- lm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8, data = trumpn)
+  summary(m1)
 }
-trumpwhitepoverty()
+mregress_trump()
+
+#plot
