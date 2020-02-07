@@ -1,9 +1,11 @@
-#analyze correlation data
+#' analyze correlation data
+
+#' @export
+#'
 
 corrtrump <- function(){
-  usethis::use_data(trumpn,overwrite = TRUE)
   pairs(trumpn)
   correlation <- cor(trumpn)
   print(correlation)
 }
-corrtrump()
+

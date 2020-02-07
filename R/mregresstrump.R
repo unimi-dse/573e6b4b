@@ -1,6 +1,9 @@
-#multiple regression
+#' multiple regression
+
+#' @export
+#'
+
 mregress_trump <- function(){
-  usethis::use_data(trumpn,overwrite = TRUE)
   y <- trump$hate_crimes_per_100k_splc
   x1 <- trump$median_household_income
   x2 <- trump$share_unemployed_seasonal
@@ -13,4 +16,4 @@ mregress_trump <- function(){
   m1 <- lm(y ~ x1 + x2 + x3 + x4 + x5 + x6 + x7 + x8, data = trumpn)
   summary(m1)
 }
-mregress_trump()
+
