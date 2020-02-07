@@ -1,13 +1,17 @@
 ---
-title: "drug-use"
+title: "Crime"
 author: "EB"
 date: "5/2/2020"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
-**Title** #analysis of dependence of poverty and trump voters
-*Subtitle* #Analysis of variables
+**Analysis of dependence of crime by many factors**
+*Analysis of variables*
 ```{r}
+
+ProjectTrial::corrtrump()
 
 ```
 

@@ -1,24 +1,6 @@
-usethis::use_data(trump, overwrite = TRUE)
-
-trumpanalysis <- function(){
-  str(trump)
-  head(trump)
-  summary(trump)
-}
-trumpanalysis()
-
-#analyze correlation data
-trumpn <- trump[-1]
-corrtrump <- function(){
-  pairs(trumpn)
-  correlation <- cor(trumpn)
-  print(correlation)
-}
-corrtrump()
-
-
 #multiple regression
 mregress_trump <- function(){
+  usethis::use_data(trumpn,overwrite = TRUE)
   y <- trump$hate_crimes_per_100k_splc
   x1 <- trump$median_household_income
   x2 <- trump$share_unemployed_seasonal
@@ -32,13 +14,3 @@ mregress_trump <- function(){
   summary(m1)
 }
 mregress_trump()
-
-
-#plot
-totplot<-function(){
-  require(ggplot2)
-  plot(trumpn)
-}
-totplot()
-
-
