@@ -1,3 +1,4 @@
+#' Analysis of crime
 #' @export
 #'
 
