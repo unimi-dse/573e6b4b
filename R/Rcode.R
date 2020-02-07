@@ -7,12 +7,14 @@ trumpanalysis <- function(){
 }
 trumpanalysis()
 
-#analyze data
+#analyze correlation data
 trumpn <- trump[-1]
-pairs(trumpn)
-correlation <- cor(trumpn)
-print(correlation)
-
+corrtrump <- function(){
+  pairs(trumpn)
+  correlation <- cor(trumpn)
+  print(correlation)
+}
+corrtrump()
 
 
 #multiple regression
@@ -31,4 +33,12 @@ mregress_trump <- function(){
 }
 mregress_trump()
 
+
 #plot
+totplot<-function(){
+  require(ggplot2)
+  plot(trumpn)
+}
+totplot()
+
+
