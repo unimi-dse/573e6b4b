@@ -1,6 +1,5 @@
 #' hatecrime
 #'
 #' @format tibble
-#'
 
 "hatecrime"
