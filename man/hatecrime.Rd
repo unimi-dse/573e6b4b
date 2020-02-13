@@ -4,7 +4,24 @@
 \name{hatecrime}
 \alias{hatecrime}
 \title{hatecrime}
-\format{tibble}
+\format{data.frame with 11 variables and 51 observations
+\describe{
+  \item{state}{USA State name}
+  \item{median_household_income}{median household income, 2016}
+  \item{share_unemployed_seasonal}{Share of the population that is unemployed (seasonally adjusted), Sept. 2016}
+  \item{share_population_in_metro_areas}{Share of the population that lives in metropolitan areas, 2015}
+  \item{share_population_with_high_school_degree}{Share of adults 25 and older with a high-school degree, 2009}
+  \item{share_non_citizen}{Share of the population that are not U.S. citizens, 2015}
+  \item{share_white_poverty}{Share of white residents who are living in poverty, 2015}
+  \item{gini_index}{Gini Index, 2015}
+  \item{share_non_white}{Share of the population that is not white, 2015}
+  \item{share_voters_voted_trump}{Share of 2016 U.S. presidential voters who voted for Donald Trump}
+  \item{hate_crimes_per_100k_splc}{Hate crimes per 100,000 population, Southern Poverty Law Center, Nov. 9-18, 2016}
+  \item{avg_hatecrimes_per_100k_fbi}{Average annual hate crimes per 100,000 population, FBI, 2010-2015}
+}}
+\source{
+\url{https://raw.githubusercontent.com/fivethirtyeight/data/master/hate-crimes/hate_crimes.csv}
+}
 \usage{
 hatecrime
 }

@@ -7,7 +7,7 @@
 cranalysis()
 }
 \value{
-a first ananlysis of the dataset
+a first analysis of the dataset
 }
 \description{
 cranalysis

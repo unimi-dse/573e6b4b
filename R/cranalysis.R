@@ -5,7 +5,7 @@
 #' @return a first analysis of the dataset
 #'
 cranalysis <- function(){
-  head(ProjectTrial::hatecrime)
+  utils::head(ProjectTrial::hatecrime)
   summary(ProjectTrial::hatecrime)
 }
 #cranalysis()
