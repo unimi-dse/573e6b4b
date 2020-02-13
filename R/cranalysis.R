@@ -2,8 +2,7 @@
 #'
 #' @export
 #'
-#'
-#' @return bla bla
+#' @return a first ananlysis of the dataset
 #'
 cranalysis <- function(){
   head(ProjectTrial::hatecrime)

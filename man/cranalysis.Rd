@@ -7,7 +7,7 @@
 cranalysis()
 }
 \value{
-bla bla
+a first ananlysis of the dataset
 }
 \description{
 cranalysis
